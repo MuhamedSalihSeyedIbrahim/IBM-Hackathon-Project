@@ -1,0 +1,28 @@
+<div class="row display">
+	<div class="col-sm-4 mt-5 ml-5 mr-5 mb-5 mx-auto">
+		<div class="card mt-5">
+			<h1 *ngIf="!this.customerServiceService.isUpdateCart" class="mt-5 ml-5">Add To Cart</h1>
+			<h1 *ngIf="this.customerServiceService.isUpdateCart" class="mt-5 ml-5">Update Product Quantity</h1>
+            
+			<form [formGroup]="addToCartForm" (submit)="this.addToCart(addToCartForm.value)">
+				<div class="row mt-5 ml-5 mr-5">
+					<div class="col-12">
+						<label for="addToCartQuantity">Enter Need in Grams/Quantity </label>
+						<input type="text" class="form-control" placeholder="Enter Quantity" formControlName="addToCartQuantity"
+							id="addToCartQuantity" required>
+						<div class="text-danger" *ngIf="addToCartQuantity.touched && addToCartQuantity.invalid && addToCartQuantity.errors.required">
+							Quantity is required</div>
+					</div>
+				</div>
+				 
+				<div class="row mt-5 ml-5 mr-5 mb-5">
+					<div class="col-6"> 
+						<button *ngIf="!this.customerServiceService.isUpdateCart" type="submit" class="btn btn-info signup-btn">Add</button>
+						<button *ngIf="this.customerServiceService.isUpdateCart" type="submit" class="btn btn-info signup-btn">Update</button>
+					</div>
+					
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

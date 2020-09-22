@@ -1,0 +1,63 @@
+<div class="row display">
+    <div class="col-xs-11 mt-5 ml-5 mr-5 mb-5 mx-auto">
+      <div class="card mt-5">
+        <h1 class="mt-5 ml-5">Add Products</h1>
+        <form [formGroup]="addProductForm" (submit)="this.addProduct(addProductForm.value)">
+          <div class="row mt-5 ml-5 mr-5">
+           
+            <div class="col-md-6 col-xs-12">
+              <label for="productId">Product Id</label>
+              <input type="text" class="form-control" placeholder="Enter productId" formControlName="productId" id="productId">
+              <div class="text-danger" *ngIf="productId.invalid && productId.errors.required && productId.touched">productId is
+                required</div>
+            </div>
+
+
+            <div class="col-md-6 col-xs-12">
+                <label for="image">Upload Image</label>
+                <input type="file" (change)="onFileSelected($event)" >
+               
+              </div>
+
+
+
+          </div>
+          <div class="row ml-5 mr-5">
+            <div class="col-md-6 col-xs-12 mt-5">
+              <label for="name">Product Name</label>
+              <input type="text" class="form-control" placeholder="Enter Product Name" formControlName="name"
+                id="name">
+              <div class="text-danger" *ngIf="name.invalid && name.errors.required && name.touched">Product
+                Name is required</div>
+            </div>
+            <div class="col-md-6 col-xs-12 mt-5">
+                <label for="category">Category</label>
+                          <select class="form-control" id="category" formControlName="category" name="category">
+                              <option></option>
+                              <option *ngFor="let category of categories" [ngValue]="category" >{{category}}</option>
+                          </select>
+                <div class ="text-danger" *ngIf = "category.invalid && category.errors.required"> Category is required</div>
+                      </div>
+          </div>
+          <div class="row ml-5 mr-5">
+            <div class="col-md-6 col-xs-12 mt-5">
+              <label for="price">Price</label>
+              <input type="text" class="form-control" placeholder="Enter Price" formControlName="price" id="price">
+              <div class="text-danger" *ngIf="price.invalid && price.errors.required && price.touched">Price is required</div>
+            </div>
+           
+            <div class="col-md-6 col-xs-12 mt-5">
+                <label for="quantity">Quantity</label>
+                <input type="text" class="form-control" placeholder="Enter Quantity" formControlName="quantity" id="quantity">
+                <div class="text-danger" *ngIf="quantity.invalid && quantity.errors.required && quantity.touched">Quantity is required</div>
+              </div>
+          </div>
+          <div class="row mt-5 ml-5 mr-5 mb-5">
+            <div class="col-12">
+              <button type="submit" class="btn btn-success signup-btn" [disabled]="!addProductForm.valid" >ADD</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

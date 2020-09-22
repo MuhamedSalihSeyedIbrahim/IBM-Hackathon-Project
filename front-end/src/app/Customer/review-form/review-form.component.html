@@ -1,0 +1,30 @@
+<div class="row display">
+        <div class="col-xs-11 mt-5 ml-5 mr-5 mb-5 mx-auto">
+          <div class="card mt-5">
+            <h1 class="mt-5 ml-5">REVIEW</h1>
+            <form  *ngIf="orderToReview" [formGroup]="reviewForm" (submit)="this.reviewSubmit(reviewForm.value)">
+           
+              <div class="row ml-5 mr-5">
+                <div class="col-md-6 col-xs-12 mt-5">
+                  <label for="rating">Product Rating Out Of 5</label>
+                  <input type="text" class="form-control" placeholder="Enter Product Rating"  formControlName="rating"
+                    id="rating">
+                  <div class="text-danger" *ngIf="rating.invalid && rating.errors.required && rating.touched">Rating is required</div>
+                </div>
+              </div>
+              <div class="row ml-5 mr-5">
+                <div class="col-md-6 col-xs-12 mt-5">
+                  <label for="comments">Comments</label>
+                  <input type="text" class="form-control" placeholder="Enter Comments" formControlName="comments" id="comments">
+                </div>
+              </div>
+              <div class="row mt-5 ml-5 mr-5 mb-5">
+                <div class="col-12">
+                  <button type="submit" class="btn btn-success signup-btn" [disabled]="!reviewForm.valid" >SUBMIT</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    

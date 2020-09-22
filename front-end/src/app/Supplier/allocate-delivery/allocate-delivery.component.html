@@ -1,0 +1,53 @@
+<div class="row">
+    <div class="container-fluid mt-5 mx-5 mb-5">
+        <div class="row">
+            <div class="col-xl-11 mt-5 mx-8 mb-5">
+                <h2> Current Request</h2>
+                <table class="table mt-2">
+                    <tr>
+                        <th class="text-light text-center">ORDER ID</th>
+                        <th class="text-light text-center">CUSTOMER ID</th>
+                        <th class="text-light text-center">VIEW ORDER</th>
+                        <th class="text-light text-center">ALLOCATE</th>
+                    </tr>
+                    <tr *ngFor="let order of orders">
+                        <td class="text-center">{{order.orderId}}</td>
+                        <td class="text-center">{{order.customerId}}</td>
+                        <td *ngIf ="order.orderId !=this.menuServiceService.showOrder">
+                            <div class="text-right text-center">
+                                    <button type="submit" class="badge-success" (click)="viewOrder(order.orderId)">
+                                        <i class="material-icons other_icon"> list </i>
+                                       Virew Order</button>
+                            </div>
+                        </td>
+
+
+                        <td *ngIf ="order.orderId ==this.menuServiceService.showOrder">
+                                <div class="text-right text-center">
+                                    <div *ngFor="let orderLists of order.orderList">
+                                 <h6><b>Product Name </b>:  {{orderLists.productId}}</h6>
+                                  <h6><b>Product Name </b>:  {{orderLists.productName}}</h6>
+                                  <h6><b>Product Quantity</b> :  {{orderLists.productQuantity}}</h6><br>
+                                    </div>
+                            </div>
+                            <div class="text-center"><button type="submit" class="badge-success"
+                                (click)="closeOrder()">Close Order</button></div>
+                          
+                        </td>
+
+
+
+                        <td>
+                                <div class="text-right text-center">
+                                    <button type="submit" class="badge-success"
+                                        (click)="allocateOrder(order.orderId)">Allocate Order</button>
+                                </div>
+                        </td>
+
+
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

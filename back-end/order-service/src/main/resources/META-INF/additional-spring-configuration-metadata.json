@@ -1,0 +1,52 @@
+{"properties": [
+  {
+    "name": "cloudant.createDb",
+    "type": "java.lang.String",
+    "description": "A description for 'cloudant.createDb'"
+  },
+  {
+    "name": "cloudant.account",
+    "type": "java.lang.String",
+    "description": "A description for 'cloudant.account'"
+  },
+  {
+    "name": "com.cognizant.AuthenticationService.getCoordinateUri",
+    "type": "java.lang.String",
+    "description": "A description for 'com.cognizant.AuthenticationService.getCoordinateUri'"
+  },
+  {
+    "name": "com.cognizant.ProductService.getProductByIdUri",
+    "type": "java.lang.String",
+    "description": "A description for 'com.cognizant.ProductService.getProductByIdUri'"
+  },
+  {
+    "name": "com.cognizant.AuthenticationService.getSupplierUri",
+    "type": "java.lang.String",
+    "description": "A description for 'com.cognizant.AuthenticationService.getSupplierUri'"
+  },
+  {
+    "name": "com.cognizant.AuthenticationService.getDeliveryUri",
+    "type": "java.lang.String",
+    "description": "A description for 'com.cognizant.AuthenticationService.getDeliveryUri'"
+  },
+  {
+    "name": "com.cognizant.AuthenticationService.getCustomerUri",
+    "type": "java.lang.String",
+    "description": "A description for 'com.cognizant.AuthenticationService.getCustomerUri'"
+  },
+  {
+    "name": "com.cognizant.AuthenticationService.getAdminUri",
+    "type": "java.lang.String",
+    "description": "A description for 'com.cognizant.AuthenticationService.getAdminUri'"
+  },
+  {
+    "name": "com.cognizant.ProductService.increaseQuantityUri",
+    "type": "java.lang.String",
+    "description": "A description for 'com.cognizant.ProductService.increaseQuantityUri'"
+  },
+  {
+    "name": "com.cognizant.ProductService.decreaseQuantityUri",
+    "type": "java.lang.String",
+    "description": "A description for 'com.cognizant.ProductService.decreaseQuantityUri'"
+  }
+]}

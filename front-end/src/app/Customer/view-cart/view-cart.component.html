@@ -1,0 +1,56 @@
+
+<div class="row">
+    <div class="container-fluid mt-5 mx-5 mb-5">
+        <div *ngFor="let particularOrder of orders">
+        <div class="row">
+            <div class="col-xl-11 mt-5 mx-8 mb-5"></div>
+                <h5><b>CURRENT ORDERS :</b></h5><br>
+                <h5>Order Id : {{particularOrder.orderId}}</h5>
+                <h5 *ngIf="this.particularOrder.status=='waiting'"><br><b> Status :</b>Your Order is accepted by admin and waiting to deliver</h5>
+                <h5 *ngIf="this.particularOrder.status=='adminApproved'"><br><b> Status :</b>Your Order is pending for admin to aprove</h5>
+                <h5 *ngIf="this.particularOrder.status=='outForDelivery'"><br><b> Status :</b>Your Order is out for deliver by our team. Keep the amount ready</h5>
+                <table class="table mt-2">
+                    <tr>
+                        <th class="text-light text-center">PRODUCT NAME</th>
+                        <th class="text-light text-center">PRODUCT QUANTITY</th>
+                        <th class="text-light text-center">PRODUCT PRICE</th>
+                        <th *ngIf="this.particularOrder.status=='waiting'" class="text-light text-center">EDIT QUANTITY</th>
+                        <th *ngIf="this.particularOrder.status=='waiting'" class="text-light text-center">DELETE ORDER</th>
+                    </tr>
+                    <tr *ngFor="let order of particularOrder.orderList">
+                        <td class="text-center">{{order.productName}}</td>
+                        <td class="text-center">{{order.productQuantity}}</td>
+                        <td class="text-center">{{order.price |currency:'INR':'code'}}</td>
+                       
+
+                        <td class="center-block">
+                            <div class="text-right">
+                                <button *ngIf="this.particularOrder.status=='waiting'" type="submit" class="badge-success"
+                                    (click)="editQuantity(particularOrder.productId,particularOrder.orderId)">Update Quantity</button>
+                            </div>
+                    </td>
+
+
+                        <td class="center-block">
+                                <div class="text-right">
+                                    <button *ngIf="this.particularOrder.status=='waiting'" type="submit" class="badge-success"
+                                        (click)="deleteOrder(particularOrder.productId,particularOrder.orderId)">Delete Order</button>
+                                </div>
+                        </td>
+
+
+                    </tr>
+                </table>
+                <h4><b>Total Cash To Pay : {{particularOrder.totalPrice| currency:'INR':'code'}}</b></h4>
+
+                
+                <div class="text-right">
+                        <button *ngIf="this.particularOrder.status=='outForDelivery'" type="submit" class="badge-success"
+                            (click)="trackOrder(particularOrder.orderId)">Track Order</button>
+                    </div>
+
+            </div>
+        </div>
+        </div>
+    </div>
+

@@ -1,0 +1,21 @@
+#init
+git rm --cached ./front-end/src/environments/environment.ts 
+git rm --cached ./front-end/src/environments/environment.prod.ts
+git rm --cached ./poc/cloudant-couchDB-poc/src/main/resources/application.properties
+git rm --cached ./back-end/authentication-service/src/main/resources/application.properties
+git rm --cached ./back-end/order-service/src/main/resources/application.properties
+
+
+
+#Add the link of github
+git remote add gho https://github.com/MuhamedSalihSeyedIbrahim/IBM-Hackathon-Project.git 
+
+#check the link if correctly added
+git remote -v 
+
+#To pull from github
+git pull gho master
+
+# To push to github
+git push -u gho
+

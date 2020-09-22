@@ -1,0 +1,83 @@
+[
+{
+    "orderId":"1",
+    "supplierId":"1",
+    "customerId":"2",
+    "totalPrice":500,
+    "status":"waiting",
+    "orderList":[{
+        "productId":"2",
+        "productName":"betroot",
+        "productQuantity":250,
+        "price":250
+       },
+       {
+        "productId":"5",
+        "productName":"eggs",
+        "productQuantity":25,
+        "price":250
+       },
+       {
+        "productId":"3",
+        "productName":"facemask",
+        "productQuantity":1,
+        "price":250
+       }
+
+    ]
+},
+{
+    "orderId":"2",
+    "supplierId":"1",
+    "customerId":"1",
+    "totalPrice":500,
+    "status":"waiting",
+    "orderList":[{
+        "productId":"2",
+        "productName":"betroot",
+        "productQuantity":250,
+        "price":250
+       },
+       {
+        "productId":"1",
+        "productName":"carrot",
+        "productQuantity":250,
+        "price":250
+       },
+       {
+        "productId":"8",
+        "productName":"handwash",
+        "productQuantity":1,
+        "price":250
+       }
+
+    ]
+},
+{
+    "orderId":"3",
+    "supplierId":"1",
+    "customerId":"3",
+    "totalPrice":500,
+    "status":"waiting",
+    "orderList":[{
+        "productId":"2",
+        "productName":"betroot",
+        "productQuantity":250,
+        "price":250
+       },
+       {
+        "productId":"1",
+        "productName":"carrot",
+        "productQuantity":250,
+        "price":250
+       },
+       {
+        "productId":"8",
+        "productName":"handwash",
+        "productQuantity":1,
+        "price":250
+       }
+
+    ]
+}
+]

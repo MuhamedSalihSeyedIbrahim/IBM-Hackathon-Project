@@ -1,0 +1,93 @@
+<div class=" mr-3">
+  <nav class="navbar navbar-expand-sm navbar-dark text-light navbar_top">
+    <h2>
+      <i class="material-icons md-36"> shopping_cart </i> Mobile Market
+    </h2>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu_collapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+     <div class="collapse navbar-collapse" id="menu_collapse">
+      <ul class="navbar-nav  ml-auto">
+        <!-- <li class="nav-item active" *ngIf="loggedIn()">
+          <i class="material-icons other_icon">person </i> {{this.authService.loggedInUser.userId}}
+        </li>
+        <li class="nav-item active" *ngIf="this.authService.isAdmin">
+          <a class="nav-link" routerLink="add-product/">Add Product</a>
+        </li>
+        <li class="nav-item active" *ngIf="this.authService.isAdmin">
+          <a class="nav-link" routerLink="billing/">Billing</a>
+        </li>
+        <li class="nav-item active" *ngIf="this.authService.isUser">
+          <a class="nav-link" routerLink="purchase-history/"> Purchase History</a>
+        </li>-->
+        <!-- <li class="nav-item active" *ngIf="loggedIn()" (click)="this.authService.logout()">
+          <a class="nav-link" routerLink="login/">Logout</a>
+        </li> -->
+        <li class="nav-item active" *ngIf="!isLoggedIn()" (click)="home()">
+          <a class="nav-link" routerLink="login/">Login</a>
+        </li> 
+        <li class="nav-item active" *ngIf="!isLoggedIn()" (click)="home()">
+          <a class="nav-link" [routerLink]="['/signup','user']">User Registration</a>
+        </li>
+        <li class="nav-item active" *ngIf="!isLoggedIn()" (click)="home()">
+          <a class="nav-link" [routerLink]="['/signup','supplier']">Supplier Registration</a>
+        </li>
+        <li class="nav-item active" *ngIf="isLoggedIn && (isAdmin() || isCustomer() || isSupplier())">  
+          <a class="nav-link" [routerLink]="['/search']">Search</a>
+        </li> 
+         
+        <li class="nav-item active" *ngIf="isLoggedIn() && isSupplier()">
+          <a class="nav-link" [routerLink]="['/allocateDelivery']">Allocate Delivery</a> 
+        </li> 
+
+            
+        <li class="nav-item active" *ngIf="isLoggedIn() && isCustomer()">
+          <a class="nav-link" [routerLink]="['/viewCart']">View Cart</a>  
+        </li> 
+      
+        <!-- <li class="nav-item active" *ngIf="isLoggedIn()">
+          <a class="nav-link" [routerLink]="['/map-search']">Map Search</a>
+        </li>  -->
+
+                 
+        <li class="nav-item active" *ngIf="isLoggedIn() && isDelivery()">
+          <a class="nav-link" [routerLink]="['/deliveryHome']">Delivery Home</a> 
+        </li> 
+
+             
+        <li class="nav-item active" *ngIf="isLoggedIn() && isAdmin()">
+          <a class="nav-link" [routerLink]="['/addNewProduct']">Add New Product</a> 
+        </li> 
+
+        <li class="nav-item active" *ngIf="isLoggedIn() && isCustomer()">
+            <a class="nav-link" [routerLink]="['/review']">Review A Order</a> 
+          </li> 
+  
+
+          <li class="nav-item active" *ngIf="isLoggedIn() && isAdmin()">
+              <a class="nav-link" [routerLink]="['/adminviewreview']">Admin View Review</a>
+                        </li> 
+
+            <li class="nav-item active" *ngIf="isLoggedIn() && isSupplier()">
+                <a class="nav-link" [routerLink]="['/supplierviewreview']">Supplier View Review</a>  
+              </li> 
+              <li class="nav-item active" *ngIf="isLoggedIn()" (click)="logout()">
+                <a class="nav-link" routerLink="login/">Logout</a>
+              </li>
+      </ul>
+    </div>
+  </nav>
+   <router-outlet></router-outlet> 
+   <div *ngIf="!isLoggedIn() && !isHome()">
+    <app-home></app-home>
+  </div>
+
+  <!-- <nav class="navbar navbar-expand-sm navbar-dark text-light navbar_bottom ">
+    <h4>Copyright 2019</h4>
+</nav> -->
+<div class="navbar edit_colors footer fixed-bottom">
+  <div class="navbar-brand">
+    Copyrights @2020
+  </div>
+</div>
+</div>

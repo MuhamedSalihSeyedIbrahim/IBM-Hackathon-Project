@@ -1,0 +1,54 @@
+
+.material-icons.md-36 {
+	font-size: 30px;
+	line-height: 1;
+	vertical-align: middle;
+	
+}
+
+.material-icons.other_icon {
+	line-height: 1;
+	vertical-align: middle;
+	size:5px;
+}
+
+.add_colors{
+	color: #808080;
+}
+.edit_colors{
+	background-color:#2E8B57;
+	color:white;
+
+}
+.price_color{
+	color:#800000;
+}
+.navbar_top {
+	background-color: #2E8B57;
+}
+
+.navbar_bottom {
+	background-color: #2E8B57;
+	/* position: fixed; */
+	width: 100%;
+	bottom: 0;
+}
+
+.badge-primary.delivery_badge {
+	vertical-align: super;
+}
+
+.delete-icon {
+	text-align: right;
+}
+
+.signup-btn {
+	background-color:#CD5C5C;
+	color: white;
+}
+.search-bar {
+    height:100%;
+	background-image:
+		url('https://images.unsplash.com/photo-1525328437458-0c4d4db7cab4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80');
+}
+

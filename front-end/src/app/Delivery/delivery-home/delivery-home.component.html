@@ -1,0 +1,74 @@
+    <div class="row">
+    <div class="container-fluid mt-5 mx-5 mb-5">
+        <div class="row">
+            <div class="col-xl-11 mt-5 mx-8 mb-5">
+                <h2> Current Request</h2>
+                <table class="table mt-2">
+                    <tr>
+                        <th class="text-light text-center">ORDER ID</th>
+                        <th class="text-light text-center">CUSTOMER ID</th>
+                        <th class="text-light text-center">VIEW ORDER</th>
+                        <th class="text-light text-center">TOTAL PRICE</th>
+                        <th class="text-light text-center">STATUS CHANGE</th>
+                        <th class="text-light text-center">DELEVERED</th>
+
+
+                    </tr>
+                    <tr *ngFor="let deliveryOrder of deliveryOrders" >
+                        <td class="text-center">{{deliveryOrder.orderId}}</td>
+                        <td class="text-center">{{deliveryOrder.customerId}}</td>
+                        <td *ngIf ="deliveryOrder.orderId !=this.menuServiceService.showOrder">
+                            <div class="text-right text-center">
+                                    <button type="submit" class="badge-success" (click)="viewOrder(deliveryOrder.orderId)">
+                                        <i class="material-icons other_icon"> list </i>
+                                       Virew Order</button>
+                            </div>
+                        </td>
+
+
+                        <td *ngIf ="deliveryOrder.orderId ==this.menuServiceService.showOrder">
+                                <div class="text-right text-center">
+                                    <div *ngFor="let orderLists of deliveryOrder.orderList">
+                                 <h6><b>Product Name </b>:  {{orderLists.productId}}</h6>
+                                  <h6><b>Product Name </b>:  {{orderLists.productName}}</h6>
+                                  <h6><b>Product Quantity</b> :  {{orderLists.productQuantity}}</h6><br>
+                                    </div>
+                            </div>
+                            <div class="text-center"><button type="submit" class="badge-success"
+                                (click)="closeOrder()">Close Order</button></div>
+                          
+                        </td>
+
+                        <td class="text-center">{{deliveryOrder.totalPrice}}</td>
+
+
+                        <td *ngIf="deliveryOrder.status=='adminApproverd'">
+                                <div class="text-right text-center">
+                                    <button type="submit" class="badge-success"
+                                        (click)="startDelivery(deliveryOrder.orderId)">Start Delivery</button>
+                                </div>
+                        </td>
+
+                        
+
+                        <td *ngIf="deliveryOrder.status=='outForDelivery'">
+                            <div class="text-right text-center">
+                                <button type="submit" class="badge-warning"
+                                [routerLink]="['/viewLocation',deliveryOrder.orderId]" >View Location</button>
+                            </div>
+                    </td>
+
+                    <td *ngIf="deliveryOrder.status=='adminApproverd'">
+                        <div class="text-right text-center">
+                            <button type="submit" class="badge-success"
+                                (click)="deliveryDone(deliveryOrder.orderId)">Delivered</button>
+                        </div>
+                </td>
+
+
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

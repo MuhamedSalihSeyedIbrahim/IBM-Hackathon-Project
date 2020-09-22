@@ -1,0 +1,89 @@
+<div class="search-bar">
+    <div class="row">
+      <div class="col-xl-11 mt-5 ml-5 mr-5">
+        <h1 class="text-white">Find Products</h1>
+      </div>
+      <div class="col-xl-11 mt-5 ml-5 mr-5">
+        <form>
+          <div class="input-group md-form form-sm form-1 pl-0">
+            <div class="input-group-prepend">
+              <span class="input-group-text purple lighten-3 mb-5" id="basic-text1"><i
+                  class="material-icons">fastfood</i></span>
+            </div>
+            <input type="search" class="form-control" name="search-bar" [(ngModel)]="itemSearch" (input)="searchItem()"
+              placeholder="Search food items">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="card-deck my-5">
+    <div class="row col-sm-12">
+        <div class="col-lg-3 col-md-6 mr-auto" *ngFor="let  item of itemsFiltered">
+
+
+
+        <div class="card my-5">
+     <img class="card-img-top imsize" src={{item.image}} alt="Card image"> 
+            <div class="card-body">
+              <div class="row">
+                <div class="col-8">
+                  <h4 class="card-title">{{item.name}}</h4>
+                </div>
+                <div class="ml-auto"><b>{{item.price| currency:'INR':'code'}} {{item.displayCategory}}</b>
+                 
+                </div>
+               
+              </div><br>
+              <div class="row">
+                      <h5><b>Category :  </b></h5>
+                        <h5>{{item.category}}</h5>
+                      
+                  
+              </div>
+              <div class="row">
+               
+            <h5><b>Quantity :  </b></h5>
+                 <h5 class="mr-auto">{{item.quantity}}</h5>
+      
+              </div>
+              <div *ngIf ="this.userAuthService.role=='supplier'" class="row ml-auto">
+          
+                  <button type="button" class="btn btn-info btnsize float-right" [routerLink]="['/updateStock',item.productId]" >
+                    <i class="material-icons other_icon"> update </i> <h6>Update Stock</h6>
+                  </button>
+              </div>
+
+
+              <div *ngIf ="this.userAuthService.role=='superadmin'" class="row ml-auto">
+          
+                <button type="button" class="btn btn-info btnsize float-right" [routerLink]="['/editProduct',item.productId]" >
+                  <i class="material-icons other_icon"> update </i> <h6>EDIT</h6>
+                </button>
+            </div>
+
+
+
+              <div *ngIf ="this.userAuthService.role=='customer'" class="row ml-auto">
+          
+                <button type="button" class="btn btn-info btnsize float-right" [routerLink]="['/addToCart',item.productId]" >
+                  <i class="material-icons other_icon"> Cart </i> <h6>Buy</h6>
+                </button>
+
+                
+            </div>
+ 
+
+          </div>
+          </div>
+
+
+
+
+        </div>
+      </div>
+    </div>
+ 

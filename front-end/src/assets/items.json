@@ -1,0 +1,71 @@
+[
+{  "productId":"1",
+     "image":"https://unsplash.com/photos/XgvkPJfw0OU",
+     "displayCategory":"/100 grams",
+    "name":"carrot",
+    "price":25,
+    "category":"vegitables",
+    "quantity":25
+},
+
+{
+    "productId":"2",
+    "image":"https://unsplash.com/photos/XgvkPJfw0OU",
+    "displayCategory":"/100 grams",
+    "name":"beetroot",
+    "price":15,
+    "category":"vegitables",
+    "quantity":50
+},
+
+{
+    "productId":"3",
+    "image":"https://unsplash.com/photos/XgvkPJfw0OU",
+    "displayCategory":"/quantity",
+    "name":"facemask",
+    "price":25,
+    "category":"pharmacy",
+    "quantity":100
+},
+
+{
+    "productId":"4",
+    "image":"https://unsplash.com/photos/XgvkPJfw0OU",
+    "displayCategory":"/quantity",
+    "name":"seabumGel",
+    "price":250,
+    "category":"pharmacy",
+    "quantity":150
+},
+
+{
+    "productId":"5",
+    "image":"https://unsplash.com/photos/XgvkPJfw0OU",
+    "displayCategory":"/quantity",
+    "name":"blankets",
+    "price":150,
+    "category":"cloth",
+    "quantity":25
+},
+
+{
+    "productId":"6",
+    "image":"https://unsplash.com/photos/XgvkPJfw0OU",
+    "displayCategory":"/quantity",
+    "name":"eggs",
+    "price":5,
+    "category":"vegitables",
+    "quantity":200
+},
+
+{
+    "productId":"7",
+    "image":"https://unsplash.com/photos/XgvkPJfw0OU",
+    "displayCategory":"/100 grams",
+    "name":"ladiesFinger",
+    "price":10,
+    "category":"vegitables",
+    "quantity":200
+}
+
+]

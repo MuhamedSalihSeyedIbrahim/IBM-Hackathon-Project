@@ -1,0 +1,27 @@
+
+<div class="row display">
+	<div class="col-sm-4 mt-5 ml-5 mr-5 mb-5 mx-auto">
+		<div class="card mt-5">
+            <h1 class="mt-5 ml-5">Update Stock</h1>
+            
+			<form [formGroup]="updateForm" (submit)="this.updateStock(updateForm.value)">
+				<div class="row mt-5 ml-5 mr-5">
+					<div class="col-12">
+						<label for="updateQuantity">Update Quantity</label>
+						<input type="text" class="form-control" placeholder="Enter Quantity" formControlName="updateQuantity"
+							id="updateQuantity" required>
+						<div class="text-danger" *ngIf="updateQuantity.touched && updateQuantity.invalid && updateQuantity.errors.required">
+							Quantity is required</div>
+					</div>
+				</div>
+				 
+				<div class="row mt-5 ml-5 mr-5 mb-5">
+					<div class="col-6"> 
+						<button type="submit" class="btn btn-info signup-btn">Update</button>
+					</div>
+					
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

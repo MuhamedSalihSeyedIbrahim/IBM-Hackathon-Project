@@ -1,0 +1,37 @@
+{"properties": [
+  {
+    "name": "cloudant.url",
+    "type": "java.lang.String",
+    "description": "A description for 'cloudant.url'"
+  },
+  {
+    "name": "cloudant.username",
+    "type": "java.lang.String",
+    "description": "A description for 'cloudant.username'"
+  },
+  {
+    "name": "cloudant.password",
+    "type": "java.lang.String",
+    "description": "A description for 'cloudant.password'"
+  },
+  {
+    "name": "cloudant.account",
+    "type": "java.lang.String",
+    "description": "A description for 'cloudant.account'"
+  },
+  {
+    "name": "cloudant.db",
+    "type": "java.lang.String",
+    "description": "A description for 'cloudant.db'"
+  },
+  {
+    "name": "com.cognizant.SupplierService.addSupplierProductUri",
+    "type": "java.lang.String",
+    "description": "A description for 'com.cognizant.SupplierService.addSupplierProductUri'"
+  },
+  {
+    "name": "com.cognizant.SupplierService.deleteSupplierProductUri",
+    "type": "java.lang.String",
+    "description": "A description for 'com.cognizant.SupplierService.deleteSupplierProductUri'"
+  }
+]}

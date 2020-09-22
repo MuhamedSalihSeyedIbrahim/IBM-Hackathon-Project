@@ -1,0 +1,43 @@
+<div class="row display">
+	<div class="col-sm-4 mt-5 ml-5 mr-5 mb-5 mx-auto">
+		<div class="card mt-2 mb-2">
+			<h1 class="mt-3 ml-5 mr-5">Login</h1>
+
+			<!-- <div class="alert alert-info mt-5 ml-5 mr-5" *ngIf="clickedOnAdd">Please login	before adding an item to cart.</div> -->
+			<!-- <div class="alert alert-danger ml-5 mr-5"
+				*ngIf="userId.touched && password.touched && !this.authService.validCredentials">Invalid UserId /
+				Password</div> -->
+			<form [formGroup]="loginForm" (submit)="this.login()">
+				<div class="row mt-4 ml-4 mr-3">
+					<div class="col-12">
+						<label for="userId">UserId</label>
+						<input type="text" class="form-control" placeholder="Enter UserId" formControlName="userId"
+							id="userId" required>
+						<div class="text-danger" *ngIf="userId.touched && userId.invalid && userId.errors.required">
+							UserId is required</div>
+					</div>
+				</div>
+				<div class="row ml-4 mr-3">
+					<div class="col-12 mt-5">
+						<label for="password">Password</label>
+						<input type="password" class="form-control" placeholder="Password" formControlName="password"
+							id="password" required>
+						<div class="text-danger"
+							*ngIf="password.touched && password.invalid && password.errors.required">Password is
+							required</div>
+					</div>
+				</div>
+				<div class="row mt-5 ml-3 mr-3 mb-4">
+					<div class="col-4">
+						<button type="submit" class="btn signup-btn">Login</button>
+					</div>
+					<div class="col-8 text-right">
+						<div>
+							<small class = "text-muted">New Here? </small><a (click)="toSignupUser()" class="btn text-light">Click Here</a>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

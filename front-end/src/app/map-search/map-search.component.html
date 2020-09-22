@@ -1,0 +1,82 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="container">
+        <div #map class="map-search"></div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="container">
+        <h2>Address Mapping</h2>
+        <p>Confirm your values before submitting</p>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Parameters</th>
+              <th>Values</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>location</td>
+              <td>
+                <tr *ngFor="let obj of location | keyvalue">
+                  {{
+                    obj.key + ": " + obj.value + "\n"
+                  }}
+                </tr>
+              </td>
+            </tr>
+            <tr>
+              <td>nearestMarketLocation</td>
+              <td>
+                <tr *ngFor="let obj of nearestMarketLocation | keyvalue">
+                  {{
+                    obj.key + ": " + obj.value + "\n"
+                  }}
+                </tr>
+              </td>
+            </tr>
+            <tr>
+              <td>address</td>
+              <td>
+                <tr *ngFor="let obj of address | keyvalue">
+                  {{
+                    obj.key + ":" + obj.value + "\n"
+                  }}
+                </tr>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="map-search"
+          >Enter the location (enter to start search)*:</label
+        >
+        <input
+          type="search"
+          id="map-search"
+          name="location-search"
+          class="form-control"
+          placeholder="Country,Postal Code"
+          #locationsearchbox
+          (keyup.enter)="this.markLocation(locationsearchbox.value)"
+        />
+      </div>
+    </div>
+    <div class="col-md-6">
+      <button
+        type="submit"
+        class="btn signup-btn btn-primary"
+        (click)="this.signup()"
+      >
+        Submit
+      </button>
+    </div>
+  </div>
+</div>

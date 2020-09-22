@@ -1,0 +1,59 @@
+<div class="row">
+        <div class="container-fluid mt-5 mx-5 mb-5">
+            <div class="row">
+                <div class="col-xl-11 mt-5 mx-8 mb-5">
+                    <h2> VIEW CUSTOMER REVIEW</h2>
+                    <table class="table mt-2">
+                        <tr>
+                            <th class="text-light text-center">ORDER ID</th>
+                            <th class="text-light text-center">CUSTOMER ID</th>
+                            <th class="text-light text-center">SUPPLIER ID</th>
+                            <th class="text-light text-center">VIEW ORDER</th>
+                            <th class="text-light text-center">RATING/th>
+                            <th class="text-light text-center">COMMENTS</th>
+                            <th class="text-light text-center">DONE</th>
+                        </tr>
+                        <tr *ngFor="let review of reviews">
+                            <td class="text-center">{{review.orderId}}</td>
+                            <td class="text-center">{{review.customerId}}</td>
+                            <td class="text-center">{{review.supplierId}}</td>
+                            <td *ngIf ="review.orderId !=this.menuServiceService.showOrder">
+                                <div class="text-right text-center">
+                                        <button type="submit" class="badge-success" (click)="viewOrder(review.orderId)">
+                                            <i class="material-icons other_icon"> list </i>
+                                           Virew Order</button>
+                                </div>
+                            </td>
+    
+    
+                            <td *ngIf ="review.orderId ==this.menuServiceService.showOrder">
+                                    <div class="text-right text-center">
+                                        <div *ngFor="let orderLists of review.orderList">
+                                     <h6><b>Product Name </b>:  {{orderLists.productId}}</h6>
+                                      <h6><b>Product Name </b>:  {{orderLists.productName}}</h6>
+                                      <h6><b>Product Quantity</b> :  {{orderLists.productQuantity}}</h6><br>
+                                        </div>
+                                </div>
+                                <div class="text-center"><button type="submit" class="badge-success"
+                                    (click)="closeOrder()">Close Order</button></div>
+                              
+                            </td>
+    
+    
+                            <td class="text-center">{{review.rating}}</td>
+                            <td class="text-center">{{review.comments}}</td>
+                            <td>
+                                    <div class="text-right text-center">
+                                        <button type="submit" class="badge-success"
+                                            (click)="reviewedAdmin(review.orderId)">DONE</button>
+                                    </div>
+                            </td>
+    
+    
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    

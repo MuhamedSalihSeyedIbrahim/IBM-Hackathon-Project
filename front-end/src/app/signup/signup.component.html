@@ -1,0 +1,77 @@
+<div class="row display">
+    <div class="col-xs-11 mt-5 ml-5 mr-5 mb-5 mx-auto">
+      <div class="card mt-5">
+        <h1 class="mt-5 ml-5">Signup</h1>
+        <form [formGroup]="signUpForm" (submit)="this.addUser(signUpForm.value)">
+          <div class="row mt-5 ml-5 mr-5">
+            <div class="alert-danger col-12 px-auto" *ngIf="signUpForm.get('userId').hasError('userIdTaken')">
+              UserId already exists
+            </div>
+            <div class="col-md-6 col-xs-12">
+              <label for="userId">UserId</label>
+              <input type="text" class="form-control" placeholder="Enter UserId" formControlName="userId" id="userId">
+              <div class="text-danger" *ngIf="userId.invalid && userId.errors.required && userId.touched">UserId is
+                required</div>
+            </div>
+          </div>
+          <div class="row ml-5 mr-5">
+            <div class="col-md-6 col-xs-12 mt-5">
+              <label for="firstname">First Name</label>
+              <input type="text" class="form-control" placeholder="Enter First Name" formControlName="firstname"
+                id="firstname">
+              <div class="text-danger" *ngIf="firstname.invalid && firstname.errors.required && firstname.touched">First
+                Name is required</div>
+            </div>
+            <div class="col-md-6 col-xs-12  mt-5">
+              <label for="lastname">Last Name</label>
+              <input type="text" class="form-control" placeholder="Enter Last Name" formControlName="lastname"
+                id="lastname">
+              <div class="text-danger" *ngIf="lastname.invalid && lastname.errors.required && lastname.touched">Last Name
+                is required</div>
+            </div>
+          </div>
+          <div class="row ml-5 mr-5">
+            <div class="col-md-6 col-xs-12 mt-5">
+              <label for="age">Age</label>
+              <input type="text" class="form-control" placeholder="Enter Age" formControlName="age" id="age">
+              <div class="text-danger" *ngIf="age.invalid && age.errors.required && age.touched">Age is required</div>
+            </div>
+            <div class="col-md-6 col-xs-12  mt-5">
+              <label for="contact">Contact Number</label>
+              <input type="text" class="form-control" placeholder="Enter Contact Number" formControlName="contact"
+                id="contact">
+              <div class="text-danger" *ngIf="contact.invalid && contact.errors.required && contact.touched">Contact
+                Number is required</div>
+            </div>
+          </div>
+  
+          <div class="row ml-5 mr-5">
+            <div class="col-md-6 col-xs-12 mt-5">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" placeholder="Enter Password" formControlName="password"
+                id="password">
+              <div class="text-danger" *ngIf="password.invalid && password.errors.required && password.touched">Password
+                is required</div>
+            </div>
+            <div class="col-md-6 col-xs-12 mt-5">
+              <label for="confirmPassword">Confirm Password</label>
+              <input type="password" class="form-control" placeholder="Enter Confirm Password"
+                formControlName="confirmPassword" id="confirmPassword">
+              <div class="text-danger"
+                *ngIf="confirmPassword.invalid && confirmPassword.errors.required && confirmPassword.touched">Confirm the
+                Password</div>
+              <div class="text-danger" *ngIf="signUpForm.get('confirmPassword').hasError('nomatch')">Password and Confirm
+                Password do not match</div>
+            </div>
+          </div>
+          
+  
+          <div class="row mt-5 ml-5 mr-5 mb-5">
+            <div class="col-12">
+              <button type="submit" class="btn signup-btn" [disabled]="!signUpForm.valid" >Location</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
